@@ -1,14 +1,14 @@
 
-export const addNew = (id) => {
+export const addNew = (id, car) => {
     return {
         type: "ADD_NEW",
-        payload: id,
+        payload: {id: id, car: car},
     }
 }
 
-export const remove = (id) => {
+export const remove = (id, car) => {
     return {
         type: "REMOVE",
-        payload: id,
+        payload: {id: id, car: car},
     }
 }

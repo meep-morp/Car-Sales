@@ -4,11 +4,10 @@ import { remove } from "../actions/carSalesActions";
 
 const AddedFeature = props => {
 	const dispatch = useDispatch();
-	console.log(props.feature)
 	return (
 		<li>
 			<button
-				onClick={() => dispatch(remove(props.feature))}
+				onClick={() => dispatch(remove(props.feature, props.car))}
 				className="button"
         >
 				X

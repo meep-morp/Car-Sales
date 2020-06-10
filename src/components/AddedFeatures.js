@@ -6,16 +6,15 @@ const AddedFeatures = props => {
 
   const UrlId = useParams()
   const id = UrlId.id;
-
-  console.log(props.car[id].features)
+  
 
   return (
     <div className="content">
       <h6>Added features:</h6>
-      {props.car[id].features.length ? (
+      {props.car[id].features.length !== 0 ? (
         <ol type="1">
           {props.car[id].features.map(item => (
-            <AddedFeature key={item.id} feature={item} />
+            <AddedFeature key={item.id} feature={item} car={props.car[id]}/>
           ))}
         </ol>
       ) : (
