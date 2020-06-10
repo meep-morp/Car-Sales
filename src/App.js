@@ -7,7 +7,6 @@ import Total from "./components/Total";
 
 const App = () => {
   const carState = useSelector(state => state.addFeatures);
-console.log(carState);
 	return (
 			<div className="boxes">
 				<div className="box">
