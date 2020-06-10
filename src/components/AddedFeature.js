@@ -4,6 +4,7 @@ import { remove } from "../actions/carSalesActions";
 
 const AddedFeature = props => {
 	const dispatch = useDispatch();
+	console.log(props.feature)
 	return (
 		<li>
 			<button

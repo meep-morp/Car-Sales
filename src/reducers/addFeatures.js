@@ -1,34 +1,46 @@
+import { randomParts } from "../data/parts";
+import { randomNumber } from "../data/parts";
+import { cars } from "../data/cars";
+/*	STRETCH GOAL	*/
+// Random number generator for cost of parts & for index of random list
+
+
 const initialState = {
 	additionalPrice: 0,
-	car: {
-		price: 26395,
-		name: "2019 Ford Mustang",
-		image:
-			"https://cdn.motor1.com/images/mgl/0AN2V/s1/2019-ford-mustang-bullitt.jpg",
-		features: [],
-	},
+	cars,
 	additionalFeatures: [
-		{ id: 1, name: "V-6 engine", price: 1500 },
-		{ id: 2, name: "Racing detail package", price: 1500 },
-		{ id: 3, name: "Premium sound system", price: 500 },
-		{ id: 4, name: "Rear spoiler", price: 250 },
+		randomParts[randomNumber(0, 9)],
+		randomParts[randomNumber(0, 9)],
+		randomParts[randomNumber(0, 9)],
+		randomParts[randomNumber(0, 9)],
 	],
 };
 
 export const addFeatures = (state = initialState, action) => {
 	switch (action.type) {
 		default:
-      return state;
-    case "REMOVE": 
-    return {
-      ...state,
-      additionalFeatures: [...state.additionalFeatures, action.payload],
-      car: {
-        ...state.car,
-        features: state.car.features.filter(item => item.id !== action.payload.id)
-      },
-      additionalPrice: state.additionalPrice - action.payload.price,
-    };
+			return state;
+		case "NEW_IMAGE": 
+		return {
+			...state,
+			car: {
+				...state.car,
+				name: action.payload.name,
+				image: action.payload.url
+			}
+		}
+		case "REMOVE":
+			return {
+				...state,
+				additionalFeatures: [...state.additionalFeatures, action.payload],
+				car: {
+					...state.car,
+					features: state.car.features.filter(
+						item => item.id !== action.payload.id
+					),
+				},
+				additionalPrice: state.additionalPrice - action.payload.price,
+			};
 		case "ADD_NEW":
 			return {
 				...state,

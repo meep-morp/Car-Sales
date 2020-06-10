@@ -1,13 +1,57 @@
-html, body, #root {
-  height: 100%;
-}
+// html, body, #root {
+//   height: 100%;
+// }
 body {
   background: #333;
+background-attachment: fixed;
+  background-image: 
+  url(https://t3.ftcdn.net/jpg/03/20/44/94/240_F_320449427_K4AI7N4Wb5INpkUwc4of8Te80hDkLQpW.jpg);
   margin: 0;
   display: grid;
   padding: 3em;
   place-items: center;
 }
+
+.home {
+  background-color: #333333;
+  height: 100%;
+  box-shadow: 0 10px 10px black ;
+}
+
+.car {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5%;
+
+    img {
+      width: 450px;
+      height: 300px;
+      object-fit: cover;
+
+      &:hover {
+        opacity: 0.5;
+        transition: 0.5s ease;
+      }
+    }
+
+    h2 {
+      margin-bottom: 20px;;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+}
+
+h1 {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 3rem;
+}
+
 .boxes {
   display: grid;
   grid-gap: 2em;
